@@ -76,8 +76,8 @@ class _HomeState extends State<Home> {
               child: ListView(
                 children: retorno.entries.map((dados) {
                   return ListTile(
-                    title: Text(dados.key), // Use 'dados.key' ou qualquer outro dado que faça sentido para o título
-                    subtitle: Text(dados.value), // Assumindo que 'dados.value' é um Map
+                    title: capitalizaTexto(dados.key),
+                    subtitle: Text(dados.value),
                   );
                 }).toList(), // Converte o Iterable em uma lista de widgets
               ),
@@ -87,6 +87,10 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+ Text capitalizaTexto(String dados) {
+    return  Text(dados[0].toUpperCase()+dados.substring(1).toLowerCase());
+ }
 
 
 }
