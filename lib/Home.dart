@@ -17,11 +17,11 @@ class _HomeState extends State<Home> {
   void _recuperarCep() async {
     String cep = controllerTextCep.text.toString();
     String url = "https://viacep.com.br/ws/${cep}/json/";
-    print(url);
+    //print(url);
     http.Response response;
     response = await http.get(Uri.parse(url));
-    print(response.body.toString());
-    print(response.statusCode.toString());
+    //print(response.body.toString());
+    //print(response.statusCode.toString());
     Map<String,dynamic> retornoJson = json.decode(response.body);
 
     setState(() {
